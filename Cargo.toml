@@ -10,11 +10,11 @@ license = "MIT"
 authors = ["Patrick Förster <patrick.foerster@outlook.de>"]
 readme = "README.md"
 
-build = "bindings/rust/build.rs"
-include = ["bindings/rust/*", "grammar.js", "queries/*", "src/*"]
+build = "bindings/build.rs"
+include = ["bindings/*", "queries/*", "src/*"]
 
 [lib]
-path = "bindings/rust/lib.rs"
+path = "bindings/lib.rs"
 
 [dependencies]
 tree-sitter = "~0.20.9"
@@ -24,8 +24,3 @@ cc = "1.0"
 
 [dev-dependencies]
 criterion = "0.5.1"
-
-[[bench]]
-name = "bench_main"
-path = "benches/bench_main.rs"
-harness = false
